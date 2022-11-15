@@ -16,12 +16,12 @@ import static ru.netology.date.DataHelper.*;
 
 public class PaymentPageTest {
     @BeforeAll
-    static void setUpAll() {
+    static void setUpAll(){
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @AfterAll
-    static void tearDownAll() {
+    static void tearDownAll(){
         SelenideLogger.removeListener("allure");
     }
 

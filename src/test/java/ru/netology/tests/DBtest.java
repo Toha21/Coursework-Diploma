@@ -17,10 +17,12 @@ import static ru.netology.date.DataHelper.*;
 
 public class DBtest {
     @BeforeAll
-    static void setUpAll() { SelenideLogger.addListener("allure", new AllureSelenide()); }
+    static void setUpAll(){
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
 
     @AfterAll
-    static void tearDownAll() {
+    static void tearDownAll(){
         SelenideLogger.removeListener("allure");
     }
 
