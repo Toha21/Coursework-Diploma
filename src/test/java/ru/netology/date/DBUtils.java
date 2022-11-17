@@ -10,12 +10,12 @@ import java.sql.SQLException;
 
 public class DBUtils {
     static String url = getUrl();
-    static String user = "app";
+
+    static String user = "user";
     static String password = "pass";
 
-    public static String getUrl ()
-    {
-        return System.getProperty("db.url");
+    public static String getUrl () {
+        return System.getProperty("db.url", "jdbc:mysql://localhost:3306/app");
     }
 
     @SneakyThrows
@@ -44,3 +44,4 @@ public class DBUtils {
         }
     }
 }
+

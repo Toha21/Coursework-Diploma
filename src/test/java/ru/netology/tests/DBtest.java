@@ -42,7 +42,6 @@ public class DBtest {
         assertEquals("APPROVED", DBUtils.getPaymentStatus());
     }
 
-    //    NB смотри Issue #3
     @Test
     void shouldBeDeclinedWithDeclinedCard() {
         val cardInfo = new DataHelper.CardInfo(getDeclinedCardNumber(), getValidMonth(), getValidYear(), getOwnerName(), getCVC());
