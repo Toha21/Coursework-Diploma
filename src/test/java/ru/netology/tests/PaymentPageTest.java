@@ -16,12 +16,12 @@ import static ru.netology.date.DataHelper.*;
 
 public class PaymentPageTest {
     @BeforeAll
-    static void setUpAll(){
+    static void setUpAll() {
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @AfterAll
-    static void tearDownAll(){
+    static void tearDownAll() {
         SelenideLogger.removeListener("allure");
     }
 
@@ -169,8 +169,9 @@ public class PaymentPageTest {
         paymentPage.fillCard(cardInfo);
         paymentPage.successfullPayment();
     }
+
     @Test
-    void entering12InTheMonthField(){
+    void entering12InTheMonthField() {
         val cardInfo = new DataHelper.CardInfo(getTheCardNumberEnteredIsLong(), getTheFirstMonth(), getValidNextYear(), getOwnerName(), getCVC());
         val mainPage = new MainPage();
         val paymentPage = mainPage.payByCard();
@@ -276,9 +277,10 @@ public class PaymentPageTest {
         paymentPage.fillCard(cardInfo);
         paymentPage.ownerErrorVisible();
     }
+
     @Test
     void theOwnerFieldIsFilledWithCapitalLetter() {
-        val cardInfo = new DataHelper.CardInfo(getApprovedCardNumber(), getValidMonth(), getValidYear(),getOwnerNameShort(), getCVC());
+        val cardInfo = new DataHelper.CardInfo(getApprovedCardNumber(), getValidMonth(), getValidYear(), getOwnerNameShort(), getCVC());
         val mainPage = new MainPage();
         val paymentPage = mainPage.payByCard();
         paymentPage.fillCard(cardInfo);
